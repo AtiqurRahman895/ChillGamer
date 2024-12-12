@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
+
+:root {
+  /* Light mode */
+  --color-custom-primary: #5EBCE8; 
+  /* --color-custom-half-primary:#C4E7F8; */
+  --color-custom-half-primary:#5ebce862;
+}
+
+.dark {
+  /* Dark mode */
+  --color-custom-primary: #1775A1;
+  /* --color-custom-half-primary:#072A3B;  */
+  --color-custom-half-primary:#1775a15c; 
+}
+
+/* src/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    /* h1, h2, h3, h4, h5, h6{
+        @apply text-black;
+    } */
+
+  h1 {
+    @apply text-[clamp(1.75rem,1.1578947368421053rem+2.9605263157894735vw,4rem)] font-bold;
+  }
+  h2 {
+    @apply text-[clamp(1.5rem,1.236842105263158rem+1.3157894736842104vw,2.5rem)] font-semibold;
+  }
+  h3 {
+    @apply text-[clamp(1.75rem,1.6842105263157894rem+0.3289473684210526vw,2rem)] font-semibold;
+  }
+  
+  h4 {
+    @apply text-[1.5rem] font-semibold;
+  }
+  h5 {
+    @apply text-[1.25rem] font-semibold;
+  }
+  h6 {
+    @apply text-[1rem] ;
+  }
+  * {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply text-black dark:text-white bg-white dark:bg-black overflow-x-hidden font-manrope font-medium;
+  }
+  p,
+  span,
+  a,b {
+    @apply text-[14px];
+    
+  }
+  a{
+    @apply hover:scale-105 duration-500
+  }
+  header a{
+    @apply hover:text-inherit duration-500
+  }
+  footer a{
+    @apply hover:text-black hover:font-bold 
+  }
+
+  /* input,
+  textarea {
+    @apply ;
+  } */
+  /* input,textarea {
+    @apply focus:invalid:border focus:invalid:border-rose-300 focus:valid:border focus:valid:border-custom-primary;
+  } */
+
+}
+@layer utilities {
+  .headerSectionAnimation {
+    backdrop-filter: blur(20px);
+  }
+  .headerSectionAnimation {
+    @apply bg-custom-half-primary
+  }
+
+  .headerSectionBG {
+    backdrop-filter: blur(20px);
+  }
+  .headerSectionBG {
+    @apply bg-custom-half-primary
+  }
+  .sectionHeaderWidth{
+    @apply w-[90%] sm:w-[70%]
+  }
+  .sectionHeaderSubtextWidth{
+    @apply w-[90%] sm:w-[70%] text-[16px] xs:text-lg md:text-xl
+  }
+  .heroButton1{
+    @apply cursor-pointer px-4 py-2 w-fit text-sm text-nowrap font-bold rounded-full duration-500 bg-white text-custom-primary hover:bg-transparent hover:text-white hover:shadow-md border border-white
+  }
+  .heroSvg{
+    z-index: 1;
+   width: clamp(1.7rem, 1.4256637168141593rem + 1.4159292035398234vw, 2.7rem);
+   top: -2.7rem;
+   animation: svgAnimate 7s linear infinite;
+  }
+  @keyframes svgAnimate {
+    0%{
+      top:-2.7rem;
+      transform: rotate(0);
+      /* opacity: 0; */
+    }
+    100%{
+      top: 103%;
+      transform: rotate(360deg);
+      /* opacity: 0; */
+    }
+  }
+  .heroButton2{
+    @apply cursor-pointer px-4 py-2 text-center text-sm text-nowrap font-bold rounded-full duration-500 bg-transparent hover:shadow-md border dark:border-white border-black
+  }
+  .activeHeroButton2{
+    @apply dark:bg-white bg-black text-custom-primary 
+  }
+  .primaryButton{
+    @apply cursor-pointer px-4 py-2 text-center text-sm text-nowrap font-bold rounded-full duration-500 bg-custom-primary border border-custom-primary hover:shadow-sm 
+  }
+  .activePrimaryButton{
+    @apply hover:bg-custom-half-primary 
+  }
+  .cardButton{
+    @apply cursor-pointer px-4 py-2 text-center text-sm text-nowrap font-bold rounded-full duration-500 bg-custom-half-primary border border-custom-primary hover:bg-custom-primary
+  }
+  .joinedFilterButton{
+    @apply bg-white dark:bg-black hover:bg-custom-primary duration-500 dark:hover:bg-custom-primary btn join-item border border-gray-300 hover:border-gray-300 dark:border-custom-ash dark:hover:border-custom-ash text-inherit
+  }
+
+  .formSubmitBtn{
+    @apply btn border border-custom-primary hover:border-custom-primary bg-custom-primary hover:bg-custom-half-primary text-black dark:text-white btn-block
+  }
+  .fromWrapper{
+    @apply card w-full shrink-0 bg-custom-half-primary shadow-xl p-4 md:p-8 my-20 space-y-4
+  }
+
+  .MyReviewTable thead tr, .MyReviewTable tfoot tr, .MyReviewTable th{
+    @apply bg-custom-primary text-white dark:text-black
+  }
+
+  @media (min-width: 1024px) {
+
+  }
+
+
+  .footerCopyRights a {
+    /* animation-name: glowMyPortfolioLink;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode:both; */
+    /* animation-timing-function: cubic-bezier(0.28, -0.08, 0.61, 1.04); */
+    animation: glowMyPortfolioLink 5s linear infinite;
+  }
+  
+  @keyframes glowMyPortfolioLink {
+    
+    0% {
+      color: #333333;
+    }
+  
+    10% {
+      color:  #414040;
+    }
+    50% {
+      color:  #353030;
+    }
+    90% {
+      color:  #575555;
+    }
+    100% {
+      color: #444444
+    }
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bg-custom-gradient {
+    background: linear-gradient(109deg, rgba(199,101,165,1) 0%, rgba(241,71,73,1) 40%, rgba(251,202,87,1) 100%);
+  }
+
+  .menu li > *:not(ul,.themeController, .menu-title, details, .btn):active, .menu li > *:not(ul,.themeController, .menu-title, details, .btn).active, .menu li > details > summary:active {
+    --tw-bg-opacity: 1;
+    background-color: inherit;
+    color: inherit;
+    border-radius: 0px;
+    border-bottom: 2px solid;
+}
+
+.menu li > .themeController:active ,.themeController:focus, .menu li > .themeController.active {
+  border: none !important;
+}
+
+.themeController:hover, .themeController:focus{
+  color:inherit !important;
+  background-color: transparent !important;
+}
+
+
+.menu :where(li:not(.menu-title) > *:not(ul, details, .menu-title, .btn)), .menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+  @apply pl-0 lg:pl-4 ml-4 lg:ml-0 
+
+}
+
+@media (min-width: 1024px) {
+  .menu :where(li:not(.menu-title) > *:not(ul, details, .menu-title, .btn)), .menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+    margin-inline: 0px;
+    padding-inline: 1rem;
+  }
+}
+
+.menu :where(li:not(.menu-title) > *:not(ul, details, .menu-title, .btn)), .menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+    margin-inline: 0px;
+    padding-inline: 1rem;
+}
+
+.input:focus, .input:focus-within,
+.textarea:focus, .textarea:focus-within,
+.select:focus, .select:focus-within{
+  @apply border-black dark:border-white
+
+}
+.input:focus, .input:focus-within,
+.textarea:focus, .textarea:focus-within,
+.select:focus, .select:focus-within{
+  color: inherit;
+  background-color: transparent !important;
+
+}
+.input:disabled ,
+.textarea:disabled {
+  color: #7272729b;
+  border-color: #7272729b !important;
+  background-color: #6868682b !important;
+
+}
+
+.invalid{
+  @apply border focus:border-rose-300
+}
+
+
+}
