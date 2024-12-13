@@ -16,11 +16,11 @@ import UpdateProfile from "./components/AuthenticationComponent/UpdateProfile";
 import ChangePassword from "./components/AuthenticationComponent/ChangePassword";
 import ForgotPassword from "./components/AuthenticationComponent/ForgotPassword";
 // import MyReviews from "./components/MyReviewsComponent/MyReviews";
-// import AllReviews from "./components/AllReviewsComonent/AllReviews";
+import AllReviews from "./components/AllReviewsComonent/AllReviews";
 import axios from "axios";
 // import Review from "./components/ReviewComponent/Review";
 // import Wishlist from "./components/WishlistComponent/Wishlist";
-// import AllGames from "./components/AddReviewComponent/AllGames";
+import AllGames from "./components/AddReviewComponent/AllGames";
 // import Game from "./components/GameComponent/Game";
 import AddReview from "./components/AddReviewComponent/AddReview";
 import ExistingGameForm from "./components/AddReviewComponent/ExistingGameForm";
@@ -37,14 +37,14 @@ const router = createBrowserRouter([
       //   path: "/",
       //   element: <Home />,
       // },
-      // {
-      //   path: "/reviews",
-      //   element: <AllReviews />,
-      // },
-      // {
-      //   path: "/games",
-      //   element: <AllGames />,
-      // },
+      {
+        path: "/reviews",
+        element: <AllReviews />,
+      },
+      {
+        path: "/games",
+        element: <AllGames />,
+      },
       // {
       //   path: "/review/:_id",
       //   loader: async ({ params }) => {
