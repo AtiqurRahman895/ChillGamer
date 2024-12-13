@@ -22,7 +22,7 @@ import ForgotPassword from "./components/AuthenticationComponent/ForgotPassword"
 // import Wishlist from "./components/WishlistComponent/Wishlist";
 // import AllGames from "./components/AddReviewComponent/AllGames";
 // import Game from "./components/GameComponent/Game";
-// import AddReview from "./components/AddReviewComponent/AddReview";
+import AddReview from "./components/AddReviewComponent/AddReview";
 // import ExistingGameForm from "./components/AddReviewComponent/ExistingGameForm";
 // import UpdateReview from "./components/UpdateReviewComponent/UpdateReview";
 
@@ -65,14 +65,14 @@ const router = createBrowserRouter([
       //   },
       //   element: <Game />,
       // },
-      // {
-      //   path: "/addReview",
-      //   element: (
-      //     <PrivateRoute>
-      //       <AddReview />
-      //     </PrivateRoute>
-      //   ),
-      // },
+      {
+        path: "/addReview",
+        element: (
+          <PrivateRoute>
+            <AddReview />
+          </PrivateRoute>
+        ),
+      },
       // {
       //   path: "/addReviewOn/:_id",
       //   loader: async ({ params }) => {
