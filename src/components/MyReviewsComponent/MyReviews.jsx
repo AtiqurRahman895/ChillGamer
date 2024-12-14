@@ -8,7 +8,6 @@ import Loading from "../AuthenticationComponent/Loading";
 import NotFoundImage from "../../assets/notAvailable.png";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { info } from "autoprefixer";
 import { Helmet } from "react-helmet-async";
 
 const MyReviews = () => {
@@ -32,7 +31,37 @@ const MyReviews = () => {
       });
   }, [user?.email, loading]);
 
-
+  const handleDeleteButton = (_id, gameTitle) => {
+    const deleteReview = window.confirm(
+      `Are you sure about deleting your review on ${gameTitle}?`
+    );
+    if (deleteReview) {
+      setLoading(true);
+      axios
+        .delete(
+          `https://ph-tenth-assignment-server.vercel.app/deleteReview/${_id}`
+        )
+        .then(() => {
+          toast.info(
+            `You have successfully deleted your review on ${gameTitle}`
+          );
+          const gameCredentials = { gameTitle };
+          return axios.put(
+            "https://ph-tenth-assignment-server.vercel.app/addOrUpdateGame",
+            gameCredentials
+          );
+        })
+        .catch((error) => {
+          toast.error(
+            error.response?.data?.message ||
+              `Failed to delete your review or update game details for ${gameTitle}`
+          );
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
+  };
 
   // console.log(reviews)
   return loading ? (
@@ -87,6 +116,9 @@ const MyReviews = () => {
                       <td className="sm:hidden">
                         <div className="flex gap-4 w-full items-center justify-center">
                           <MdDeleteForever
+                            onClick={() =>
+                              handleDeleteButton(review._id, review.gameTitle)
+                            }
                             className="btn-sm p-1 btn-circle btn-ghost cursor-pointer"
                           />
                           <Link to={`/updateReview/${review._id}`}>
@@ -100,6 +132,9 @@ const MyReviews = () => {
                       <th className="hidden sm:table-cell">
                         <div className="flex gap-4 w-full items-center justify-center">
                           <MdDeleteForever
+                            onClick={() =>
+                              handleDeleteButton(review._id, review.gameTitle)
+                            }
                             className="btn-sm p-1 btn-circle btn-ghost cursor-pointer"
                           />
                           <Link to={`/updateReview/${review._id}`}>
