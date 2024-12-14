@@ -305,7 +305,7 @@ let addReviewOnSubmit = (e) => {
                 <span className="">Game Cover Image url</span>
               </label>
               <input
-                type="text"
+                type="url"
                 name="gameCoverImage"
                 id="gameCoverImage"
                 className="input input-ghost input-bordered"

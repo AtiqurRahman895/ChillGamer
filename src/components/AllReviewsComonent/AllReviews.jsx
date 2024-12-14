@@ -5,6 +5,7 @@ import Loading from "../AuthenticationComponent/Loading";
 import NotFoundImage from "../../assets/notAvailable.png";
 import ReviewCard from "./ReviewCard";
 import { Helmet } from "react-helmet-async";
+import TopScrollBar from "../CommonComponent/TopScrollBar";
 
 const AllReviews = () => {
   // const [showFilter,setShowFilter]= useState(false)
@@ -61,7 +62,7 @@ const AllReviews = () => {
 
       <section className="mt-10 mb-20">
         <div className="container space-y-4">
-          <Topbar
+          <TopScrollBar
             selectedGenre={selectedGenre}
             setSelectedGenre={setSelectedGenre}
             selectedSortType={selectedSortType}

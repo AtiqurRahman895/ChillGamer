@@ -102,24 +102,6 @@
   .heroButton1{
     @apply cursor-pointer px-4 py-2 w-fit text-sm text-nowrap font-bold rounded-full duration-500 bg-white text-custom-primary hover:bg-transparent hover:text-white hover:shadow-md border border-white
   }
-  .heroSvg{
-    z-index: 1;
-   width: clamp(1.7rem, 1.4256637168141593rem + 1.4159292035398234vw, 2.7rem);
-   top: -2.7rem;
-   animation: svgAnimate 7s linear infinite;
-  }
-  @keyframes svgAnimate {
-    0%{
-      top:-2.7rem;
-      transform: rotate(0);
-      /* opacity: 0; */
-    }
-    100%{
-      top: 103%;
-      transform: rotate(360deg);
-      /* opacity: 0; */
-    }
-  }
   .heroButton2{
     @apply cursor-pointer px-4 py-2 text-center text-sm text-nowrap font-bold rounded-full duration-500 bg-transparent hover:shadow-md border dark:border-white border-black
   }
@@ -129,14 +111,18 @@
   .primaryButton{
     @apply cursor-pointer px-4 py-2 text-center text-sm text-nowrap font-bold rounded-full duration-500 bg-custom-primary border border-custom-primary hover:shadow-sm 
   }
+  .primaryButton2{
+    @apply cursor-pointer px-4 py-2 text-center text-sm text-nowrap font-bold rounded-md duration-500 border border-custom-primary hover:shadow-sm 
+  }
   .activePrimaryButton{
     @apply hover:bg-custom-half-primary 
   }
   .cardButton{
     @apply cursor-pointer px-4 py-2 text-center text-sm text-nowrap font-bold rounded-full duration-500 bg-custom-half-primary border border-custom-primary hover:bg-custom-primary
   }
+
   .joinedFilterButton{
-    @apply bg-white dark:bg-black hover:bg-custom-primary duration-500 dark:hover:bg-custom-primary btn join-item border border-gray-300 hover:border-gray-300 dark:border-custom-ash dark:hover:border-custom-ash text-inherit
+    @apply bg-white dark:bg-black duration-500 hover:bg-custom-primary dark:hover:bg-custom-primary btn join-item border border-gray-300 hover:border-gray-300 dark:border-custom-ash dark:hover:border-custom-ash text-inherit
   }
 
   .formSubmitBtn{

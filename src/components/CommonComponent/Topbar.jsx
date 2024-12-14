@@ -8,17 +8,17 @@ const Topbar = ({selectedGenre,setSelectedGenre, selectedSortType, setSelectedSo
 
     
 
-    useEffect(()=>{
-        const allSortTypeList=["None", "Rating", "Year"]
-        const allGenresList=["All", "RPG", "Adventure", "Action", "Adult", "Simulation", "Royale", "Sandbox", "Party", "MOBA", "Shooter"]
+    // useEffect(()=>{
+    //     const allSortTypeList=["None", "Rating", "Year"]
+    //     const allGenresList=["All", "RPG", "Adventure", "Action", "Adult", "Simulation", "Royale", "Sandbox", "Party", "MOBA", "Shooter"]
 
-        const remainingSortTypes=allSortTypeList.filter(sortTypeName=>sortTypeName !== selectedSortType)
-        setSortTypeList(remainingSortTypes)
+    //     const remainingSortTypes=allSortTypeList.filter(sortTypeName=>sortTypeName !== selectedSortType)
+    //     setSortTypeList(remainingSortTypes)
 
-        const remainingGenres=allGenresList.filter(genreName=>genreName !== selectedGenre)
-        setGenresList(remainingGenres)
+    //     const remainingGenres=allGenresList.filter(genreName=>genreName !== selectedGenre)
+    //     setGenresList(remainingGenres)
 
-    },[selectedSortType,selectedGenre])
+    // },[selectedSortType,selectedGenre])
 
     return (
         <div className="allReviewsTopbar flex flex-col text-center xs:text-start xs:flex-row justify-between xs:items-end items-center gap-4">
@@ -32,7 +32,7 @@ const Topbar = ({selectedGenre,setSelectedGenre, selectedSortType, setSelectedSo
                     <div tabIndex={0} className={`join join-vertical w-40 dropdown-content z-20`} >
                                 {
                                     sortTypeList.map(((sortTypeName,index)=>(
-                                        <button key={index} onClick={()=>setSelectedSortType(sortTypeName)} className={`joinedFilterButton`}>{sortTypeName}</button>
+                                        <button key={index} onClick={()=>setSelectedSortType(sortTypeName)} className={`${selectedSortType===sortTypeName?"bg-custom-primary hover:bg-custom-primary":"bg-white dark:bg-black hover:bg-gray-200 dark:hover:bg-gray-800"} duration-500 btn join-item border border-gray-300 hover:border-gray-300 dark:border-custom-ash dark:hover:border-custom-ash text-inherit`}>{sortTypeName}</button>
                                     )))
                                 }
                     </div>
@@ -45,7 +45,7 @@ const Topbar = ({selectedGenre,setSelectedGenre, selectedSortType, setSelectedSo
                     <div tabIndex={0} className={`join join-vertical w-40 dropdown-content z-20`} >
                                 {
                                     genresList.map(((genreName,index)=>(
-                                        <button key={index} onClick={()=>setSelectedGenre(genreName)} className={`joinedFilterButton`}>{genreName}</button>
+                                        <button key={index} onClick={()=>setSelectedGenre(genreName)} className={`${selectedGenre===genreName?"bg-custom-primary hover:bg-custom-primary":"bg-white dark:bg-black hover:bg-gray-200 dark:hover:bg-gray-800"} duration-500 btn join-item border border-gray-300 hover:border-gray-300 dark:border-custom-ash dark:hover:border-custom-ash text-inherit`}>{genreName}</button>
                                     )))
                                 }
                     </div>
