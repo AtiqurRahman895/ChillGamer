@@ -24,7 +24,7 @@ import AllGames from "./components/AddReviewComponent/AllGames";
 // import Game from "./components/GameComponent/Game";
 import AddReview from "./components/AddReviewComponent/AddReview";
 import ExistingGameForm from "./components/AddReviewComponent/ExistingGameForm";
-// import UpdateReview from "./components/UpdateReviewComponent/UpdateReview";
+import UpdateReview from "./components/UpdateReviewComponent/UpdateReview";
 
 const router = createBrowserRouter([
   {
@@ -95,20 +95,20 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // {
-      //   path: "/updateReview/:_id",
-      //   loader: async ({ params }) => {
-      //     const response = await axios.get(
-      //       `https://ph-tenth-assignment-server.vercel.app/review/${params._id}`
-      //     );
-      //     return response.data;
-      //   },
-      //   element: (
-      //     <PrivateRoute>
-      //       <UpdateReview />
-      //     </PrivateRoute>
-      //   ),
-      // },
+      {
+        path: "/updateReview/:_id",
+        loader: async ({ params }) => {
+          const response = await axios.get(
+            `https://ph-tenth-assignment-server.vercel.app/review/${params._id}`
+          );
+          return response.data;
+        },
+        element: (
+          <PrivateRoute>
+            <UpdateReview />
+          </PrivateRoute>
+        ),
+      },
       // {
       //   path: "/wishlist",
       //   element: (
