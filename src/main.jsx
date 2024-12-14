@@ -18,7 +18,7 @@ import ForgotPassword from "./components/AuthenticationComponent/ForgotPassword"
 import MyReviews from "./components/MyReviewsComponent/MyReviews";
 import AllReviews from "./components/AllReviewsComonent/AllReviews";
 import axios from "axios";
-// import Review from "./components/ReviewComponent/Review";
+import Review from "./components/ReviewComponent/Review";
 // import Wishlist from "./components/WishlistComponent/Wishlist";
 import AllGames from "./components/AddReviewComponent/AllGames";
 // import Game from "./components/GameComponent/Game";
@@ -45,16 +45,16 @@ const router = createBrowserRouter([
         path: "/games",
         element: <AllGames />,
       },
-      // {
-      //   path: "/review/:_id",
-      //   loader: async ({ params }) => {
-      //     const response = await axios.get(
-      //       `https://ph-tenth-assignment-server.vercel.app/review/${params._id}`
-      //     );
-      //     return response.data;
-      //   },
-      //   element: <Review />,
-      // },
+      {
+        path: "/review/:_id",
+        loader: async ({ params }) => {
+          const response = await axios.get(
+            `https://ph-tenth-assignment-server.vercel.app/review/${params._id}`
+          );
+          return response.data;
+        },
+        element: <Review />,
+      },
       // {
       //   path: "/game/:_id",
       //   loader: async ({ params }) => {
