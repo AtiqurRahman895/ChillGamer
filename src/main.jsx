@@ -15,7 +15,7 @@ import PrivateRoute from "./components/AuthenticationComponent/PrivateRoute";
 import UpdateProfile from "./components/AuthenticationComponent/UpdateProfile";
 import ChangePassword from "./components/AuthenticationComponent/ChangePassword";
 import ForgotPassword from "./components/AuthenticationComponent/ForgotPassword";
-// import MyReviews from "./components/MyReviewsComponent/MyReviews";
+import MyReviews from "./components/MyReviewsComponent/MyReviews";
 import AllReviews from "./components/AllReviewsComonent/AllReviews";
 import axios from "axios";
 // import Review from "./components/ReviewComponent/Review";
@@ -87,14 +87,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // {
-      //   path: "/myReviews",
-      //   element: (
-      //     <PrivateRoute>
-      //       <MyReviews />
-      //     </PrivateRoute>
-      //   ),
-      // },
+      {
+        path: "/myReviews",
+        element: (
+          <PrivateRoute>
+            <MyReviews />
+          </PrivateRoute>
+        ),
+      },
       // {
       //   path: "/updateReview/:_id",
       //   loader: async ({ params }) => {
