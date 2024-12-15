@@ -19,9 +19,9 @@ import MyReviews from "./components/MyReviewsComponent/MyReviews";
 import AllReviews from "./components/AllReviewsComonent/AllReviews";
 import axios from "axios";
 import Review from "./components/ReviewComponent/Review";
-// import Wishlist from "./components/WishlistComponent/Wishlist";
+import Wishlist from "./components/WishlistComponent/Wishlist";
 import AllGames from "./components/AddReviewComponent/AllGames";
-// import Game from "./components/GameComponent/Game";
+import Game from "./components/GameComponent/Game";
 import AddReview from "./components/AddReviewComponent/AddReview";
 import ExistingGameForm from "./components/AddReviewComponent/ExistingGameForm";
 import UpdateReview from "./components/UpdateReviewComponent/UpdateReview";
@@ -55,16 +55,16 @@ const router = createBrowserRouter([
         },
         element: <Review />,
       },
-      // {
-      //   path: "/game/:_id",
-      //   loader: async ({ params }) => {
-      //     const response = await axios.get(
-      //       `https://ph-tenth-assignment-server.vercel.app/game/${params._id}`
-      //     );
-      //     return response.data;
-      //   },
-      //   element: <Game />,
-      // },
+      {
+        path: "/game/:_id",
+        loader: async ({ params }) => {
+          const response = await axios.get(
+            `https://ph-tenth-assignment-server.vercel.app/game/${params._id}`
+          );
+          return response.data;
+        },
+        element: <Game />,
+      },
       {
         path: "/addReview",
         element: (
@@ -109,14 +109,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // {
-      //   path: "/wishlist",
-      //   element: (
-      //     <PrivateRoute>
-      //       <Wishlist />
-      //     </PrivateRoute>
-      //   ),
-      // },
+      {
+        path: "/wishlist",
+        element: (
+          <PrivateRoute>
+            <Wishlist />
+          </PrivateRoute>
+        ),
+      },
       {
         path: "/login",
         element: <Login />,
