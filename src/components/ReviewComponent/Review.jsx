@@ -12,6 +12,7 @@ const Review = () => {
   const review = useLoaderData();
   const { user } = useContext(AuthContext);
   const [gameDetails, setGameDetails] = useState();
+  const [addedToWishlist, setAddedToWishlist] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const { gameCoverImage, gameTitle, publishingYear, genres } = review;
@@ -19,7 +20,29 @@ const Review = () => {
   const userEmail = user?.email;
   const userName = user?.displayName;
 
-
+  useEffect(() => {
+    if (userEmail && userName) {
+      const params = { query: { gameTitle, userEmail, userName } };
+      // setLoading(true)
+      axios
+        .get("https://ph-tenth-assignment-server.vercel.app/Wishlist", {
+          params,
+        })
+        .then((res) => {
+          res.data.length === 0
+            ? setAddedToWishlist(false)
+            : setAddedToWishlist(true);
+          //   setLoading(false)
+        })
+        .catch((error) => {
+          console.error("Error finding game from wishlist:", error);
+          //   setLoading(false)
+        });
+    } else {
+      // setLoading(false)
+      setAddedToWishlist(false);
+    }
+  }, []);
 
   useEffect(() => {
     const params = { query: { gameTitle: review?.gameTitle } };
@@ -38,7 +61,64 @@ const Review = () => {
       });
   }, []);
 
+  const handleAddtoWishlistButton = () => {
+    if (userEmail && userName) {
+      if (addedToWishlist) {
+        toast.warn(`You have already added ${gameTitle} to wishlist once!`);
+        return;
+      }
 
+      if (gameDetails) {
+        const {
+          _id: gameId,
+          gameTitle,
+          averageRating,
+          publishingYear,
+          genres,
+          totalReviews,
+        } = gameDetails;
+        const wishlistCredentials = {
+          gameId,
+          gameTitle,
+          averageRating,
+          publishingYear,
+          genres,
+          totalReviews,
+          userEmail,
+          userName,
+        };
+        setLoading(true);
+        axios
+          .post(
+            "https://ph-tenth-assignment-server.vercel.app/addToWishlist",
+            wishlistCredentials
+          )
+          .then(() => {
+            setAddedToWishlist(true);
+            toast.success(
+              `You have successfully added ${gameTitle} to the wishlist!`
+            );
+          })
+          .catch((error) => {
+            console.error("Error adding to wishlist:", error);
+            toast.error("Failed to add.");
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      } else {
+        toast.error(
+          "Adding this game in your wishlist is not posible rignt now! try again later!"
+        );
+      }
+    } else {
+      toast.warning(
+        "Curently you are not logged-in! Login to creat your wishlist!"
+      );
+    }
+  };
+
+  // console.log(gameDetails)
   return (
     <main className="space-y-10">
       <Helmet>
@@ -74,6 +154,7 @@ const Review = () => {
                       See Others reviews
                     </Link>
                     <button
+                      onClick={handleAddtoWishlistButton}
                       type="button"
                       className="bg-custom-primary hover:bg-custom-half-primary border border-custom-primary p-2 duration-500 rounded-full"
                     >
