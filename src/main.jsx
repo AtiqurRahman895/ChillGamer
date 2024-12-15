@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Base from "./components/baseComponent/Base";
-// import Home from "./components/HomeComponent/Home";
+import Home from "./components/HomeComponent/Home";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { HelmetProvider } from "react-helmet-async";
@@ -33,10 +33,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
 
     children: [
-      // {
-      //   path: "/",
-      //   element: <Home />,
-      // },
+      {
+        path: "/",
+        element: <Home />,
+      },
       {
         path: "/reviews",
         element: <AllReviews />,
