@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
 import HomeHeroSection from "./HomeHeroSection";
 import TopRatedGamesSection from "./TopRatedGamesSection";
-// import TrandingGamesSection from "./TrandingGamesSection";
+import TrandingGamesSection from "./TrandingGamesSection";
 // import StatsSection from "./StatsSection";
 
 const Home = () => {
@@ -17,8 +17,8 @@ const Home = () => {
       </Helmet>
       <HomeHeroSection />
       <TopRatedGamesSection />
-      {/* <TrandingGamesSection />
-      <StatsSection /> */}
+      <TrandingGamesSection />
+      {/* <StatsSection /> */}
     </main>
   );
 };
