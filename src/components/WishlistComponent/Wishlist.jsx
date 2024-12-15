@@ -61,11 +61,13 @@ const Wishlist = () => {
         <title>Your Game Wishlist | CHILL GAMER</title>
       </Helmet>
       <section className="bg-custom-primary py-16 lg:py-20">
-        <div className="container text-center place-items-center space-y-4">
-          <h1>Your Game Wishlist</h1>
-          <h5 className="sectionHeaderSubtextWidth">
-            Keep track of the games you want to play and revisit them anytime!
-          </h5>
+        <div className="container">
+          <div className=" text-center place-items-center space-y-6">
+            <h1>Your Game Wishlist</h1>
+            <h5 className="px-6 sectionHeaderWidth sectionHeaderSubtextWidth">
+              Keep track of the games you want to play and revisit them anytime!
+            </h5>
+          </div>
         </div>
       </section>
 

@@ -72,11 +72,13 @@ const MyReviews = () => {
         <title>Your Game Reviews | CHILL GAMER</title>
       </Helmet>
       <section className="bg-custom-primary py-16 lg:py-20">
-        <div className="container text-center place-items-center space-y-6">
-          <h1>Your Game Reviews</h1>
-          <h5 className="sectionHeaderSubtextWidth">
-            Manage and update your reviews to share your thoughts with others.
-          </h5>
+        <div className="container">
+          <div className=" text-center place-items-center space-y-6">
+            <h1>Your Game Reviews</h1>
+            <h5 className="px-6 sectionHeaderWidth sectionHeaderSubtextWidth">
+              Manage and update your reviews to share your thoughts with others.
+            </h5>
+          </div>
         </div>
       </section>
 
