@@ -1,13 +1,11 @@
 // import PropTypes from 'prop-types';
 
-import axios from "axios";
-import { useEffect } from "react";
+
 import { Helmet } from "react-helmet-async";
-import { toast } from "react-toastify";
 import HomeHeroSection from "./HomeHeroSection";
 import TopRatedGamesSection from "./TopRatedGamesSection";
 import TrandingGamesSection from "./TrandingGamesSection";
-// import StatsSection from "./StatsSection";
+import StatsSection from "./StatsSection";
 
 const Home = () => {
   return (
@@ -18,7 +16,7 @@ const Home = () => {
       <HomeHeroSection />
       <TopRatedGamesSection />
       <TrandingGamesSection />
-      {/* <StatsSection /> */}
+      <StatsSection />
     </main>
   );
 };
