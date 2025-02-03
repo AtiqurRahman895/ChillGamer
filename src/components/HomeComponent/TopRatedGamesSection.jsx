@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import NotFoundImage from "../../assets/notAvailable.png";
-import GameCard from "../CommonComponent/GameCard"
+import GameCard from "../CommonComponent/GameCard";
 import Loading from "../AuthenticationComponent/Loading";
 
 const TopRatedGamesSection = () => {
@@ -13,7 +13,7 @@ const TopRatedGamesSection = () => {
     const params = { limit: 6, sort: { averageRating: -1, totalReviews: -1 } };
     setLoading(true);
     axios
-      .get("https://ph-tenth-assignment-server.vercel.app/games", { params })
+      .get("https://chill-gamer-server-sepia.vercel.app/games", { params })
       .then((res) => {
         res.data.length === 0 ? setNotFound(true) : setGames(res.data);
       })
@@ -38,7 +38,7 @@ const TopRatedGamesSection = () => {
               <div className="h-lvh place-items-center grid gap-3 content-center ">
                 <img src={NotFoundImage} alt={`not available`} />
                 <h1 className="font-extrabold text-center text-custom-primary">
-                  yet to add any game in the wishlist!
+                  Anyone yet to add any games or reviews!
                 </h1>
               </div>
             ) : (

@@ -24,15 +24,11 @@ export default {
       fontFamily: {
         'manrope': ["Manrope", 'sans-serif'],
         'rubik-p': ["Rubik Puddles", 'serif'],
-        'rubik-b': ["Rubik Bubbles", 'serif'],
-        'Hanalei': ["Hanalei Fill", 'serif'],
         'Piedra': ["Piedra", 'serif'],
       },
       colors: {
         'custom-primary': 'var(--color-custom-primary)',
         'custom-half-primary': 'var(--color-custom-half-primary)',
-        // 'white': '#ffffff',
-        // "black":"#000000",
         'custom-ash': '#f0f0f0',
       },
     },

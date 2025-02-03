@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+// import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         path: "/review/:_id",
         loader: async ({ params }) => {
           const response = await axios.get(
-            `https://ph-tenth-assignment-server.vercel.app/review/${params._id}`
+            `https://chill-gamer-server-sepia.vercel.app/review/${params._id}`
           );
           return response.data;
         },
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
         path: "/game/:_id",
         loader: async ({ params }) => {
           const response = await axios.get(
-            `https://ph-tenth-assignment-server.vercel.app/game/${params._id}`
+            `https://chill-gamer-server-sepia.vercel.app/game/${params._id}`
           );
           return response.data;
         },
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
         path: "/addReviewOn/:_id",
         loader: async ({ params }) => {
           const response = await axios.get(
-            `https://ph-tenth-assignment-server.vercel.app/game/${params._id}`
+            `https://chill-gamer-server-sepia.vercel.app/game/${params._id}`
           );
           return response.data;
         },
@@ -99,7 +99,7 @@ const router = createBrowserRouter([
         path: "/updateReview/:_id",
         loader: async ({ params }) => {
           const response = await axios.get(
-            `https://ph-tenth-assignment-server.vercel.app/review/${params._id}`
+            `https://chill-gamer-server-sepia.vercel.app/review/${params._id}`
           );
           return response.data;
         },
@@ -117,6 +117,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+
+      // Authentication
       {
         path: "/login",
         element: <Login />,
@@ -150,12 +152,10 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-    <HelmetProvider>
-      <AuthProvider>
-        <RouterProvider router={router} />
-        <ToastContainer position="top-center" />
-
-      </AuthProvider>
-    </HelmetProvider>
-
+  <HelmetProvider>
+    <AuthProvider>
+      <RouterProvider router={router} />
+      <ToastContainer position="top-center" />
+    </AuthProvider>
+  </HelmetProvider>
 );

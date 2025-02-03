@@ -32,7 +32,7 @@ const AllGames = ({ addReviewPage }) => {
     setLoading(true);
 
     axios
-      .get("https://ph-tenth-assignment-server.vercel.app/games", { params })
+      .get("https://chill-gamer-server-sepia.vercel.app/games", { params })
       .then((res) => {
         if (res.data.length === 0) {
           setNotFound(true);

@@ -47,12 +47,12 @@ const HomeHeroSection = () => {
                 </Slider>
             </div> */}
             
-            <div className="mx-auto max-w-[1504px] bg-[url('https://i.ibb.co.com/3swRzjw/hero-Image.png')] bg-cover bg-no-repeat bg-center relative">
+            <div className="mx-auto bg-[url('https://i.ibb.co.com/3swRzjw/hero-Image.png')] bg-cover bg-no-repeat bg-center relative">
 
                     <Slider {...slideSettings}>
                         {
                         slideContent.map((slide,index)=>(
-                        <div key={index} className=" h-[50svh] sm:h-[65svh] lg:h-[85svh] hero-overlay bg-opacity-15">
+                        <div key={index} className=" h-[50svh] sm:h-[65svh] lg:h-[80svh] hero-overlay bg-opacity-15">
                             <div className="sectionHeaderWidth text-center h-[100%] flex flex-col justify-center items-center gap-2 text-white">
                                 <h1 className="">{slide.title}</h1>
                                 <h5 className="px-6 sectionHeaderSubtextWidth">{slide.subtext}</h5>

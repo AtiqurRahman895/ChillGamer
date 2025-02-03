@@ -18,7 +18,7 @@ const Wishlist = () => {
   useEffect(() => {
     const params = { query: { userEmail: user?.email } };
     axios
-      .get("https://ph-tenth-assignment-server.vercel.app/Wishlist", { params })
+      .get("https://chill-gamer-server-sepia.vercel.app/Wishlist", { params })
       .then((res) => {
         res.data.length === 0 ? setNotFound(true) : setWishItems(res.data);
       })
@@ -36,10 +36,7 @@ const Wishlist = () => {
     );
     if (deleteGame) {
       setLoading(true);
-      axios
-        .delete(
-          `https://ph-tenth-assignment-server.vercel.app/deleteWishlist/${_id}`
-        )
+      axios.delete(`https://chill-gamer-server-sepia.vercel.app/deleteWishlist/${_id}`)
         .then(() => {
           toast.info(
             `You have successfully deleted ${gameTitle} from your wishlist`

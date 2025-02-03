@@ -16,7 +16,7 @@ const TrandingGamesSection = () => {
     const params = { limit: 10, sort: { totalReviews: -1, averageRating: -1 } };
     setLoading(true);
     axios
-      .get("https://ph-tenth-assignment-server.vercel.app/games", { params })
+      .get("https://chill-gamer-server-sepia.vercel.app/games", { params })
       .then((res) => {
         res.data.length === 0 ? setNotFound(true) : setGames(res.data);
       })
@@ -41,7 +41,7 @@ const TrandingGamesSection = () => {
               <div className="h-lvh place-items-center grid gap-3 content-center">
                 <img src={NotFoundImage} alt={`not available`} />
                 <h1 className="font-extrabold text-center text-custom-primary">
-                  yet to add any game in the wishlist!
+                  Anyone yet to add any games or reviews!
                 </h1>
               </div>
             ) : (

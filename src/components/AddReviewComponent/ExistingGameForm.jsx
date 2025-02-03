@@ -50,7 +50,7 @@ const ExistingGameForm = () => {
 
     axios
       .post(
-        "https://ph-tenth-assignment-server.vercel.app/addReview",
+        "https://chill-gamer-server-sepia.vercel.app/addReview",
         reviewCredentials
       )
       .then(() => {
@@ -58,7 +58,7 @@ const ExistingGameForm = () => {
         toast.success("You have successfully added a Review!");
         const gameCredentials = { gameTitle };
         return axios.put(
-          "https://ph-tenth-assignment-server.vercel.app/addOrUpdateGame",
+          "https://chill-gamer-server-sepia.vercel.app/addOrUpdateGame",
           gameCredentials
         );
       })

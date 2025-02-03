@@ -27,7 +27,7 @@ const StatsSection = () => {
   useEffect(() => {
     // setLoading(true);
     axios
-      .get("https://ph-tenth-assignment-server.vercel.app/games")
+      .get("https://chill-gamer-server-sepia.vercel.app/games")
       .then((res) => {
         res.data.length === 0
           ? setNotFound(true)
@@ -43,7 +43,7 @@ const StatsSection = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://ph-tenth-assignment-server.vercel.app/reviews")
+      .get("https://chill-gamer-server-sepia.vercel.app/reviews")
       .then((res) => {
         res.data.length === 0
           ? setNotFound(true)
@@ -76,7 +76,7 @@ const StatsSection = () => {
               <div className="h-lvh place-items-center grid gap-3 content-center">
                 <img src={NotFoundImage} alt={`not available`} />
                 <h1 className="font-extrabold text-center text-custom-primary">
-                  yet to add any game in the wishlist!
+                  Anyone yet to add any games or reviews!
                 </h1>
               </div>
             ) : (

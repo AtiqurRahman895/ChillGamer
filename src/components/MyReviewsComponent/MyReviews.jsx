@@ -20,7 +20,7 @@ const MyReviews = () => {
     const params = { query: { userEmail: user?.email }, sort: { rating: -1 } };
 
     axios
-      .get("https://ph-tenth-assignment-server.vercel.app/reviews", { params })
+      .get("https://chill-gamer-server-sepia.vercel.app/reviews", { params })
       .then((res) => {
         res.data.length === 0 ? setNotFound(true) : setReviews(res.data);
         setLoading(false);
@@ -39,7 +39,7 @@ const MyReviews = () => {
       setLoading(true);
       axios
         .delete(
-          `https://ph-tenth-assignment-server.vercel.app/deleteReview/${_id}`
+          `https://chill-gamer-server-sepia.vercel.app/deleteReview/${_id}`
         )
         .then(() => {
           toast.info(
@@ -47,7 +47,7 @@ const MyReviews = () => {
           );
           const gameCredentials = { gameTitle };
           return axios.put(
-            "https://ph-tenth-assignment-server.vercel.app/addOrUpdateGame",
+            "https://chill-gamer-server-sepia.vercel.app/addOrUpdateGame",
             gameCredentials
           );
         })

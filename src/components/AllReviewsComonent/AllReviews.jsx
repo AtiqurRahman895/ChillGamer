@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Topbar from "../CommonComponent/Topbar";
 import axios from "axios";
 import Loading from "../AuthenticationComponent/Loading";
 import NotFoundImage from "../../assets/notAvailable.png";
@@ -32,7 +31,7 @@ const AllReviews = () => {
     setLoading(true);
 
     axios
-      .get("https://ph-tenth-assignment-server.vercel.app/reviews", { params })
+      .get("https://chill-gamer-server-sepia.vercel.app/reviews", { params })
       .then((res) => {
         if (res.data.length === 0) {
           setNotFound(true);

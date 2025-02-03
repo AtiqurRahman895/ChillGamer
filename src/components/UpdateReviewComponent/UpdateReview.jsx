@@ -53,7 +53,7 @@ const UpdateReview = () => {
 
     axios
       .put(
-        "https://ph-tenth-assignment-server.vercel.app/updateReview",
+        "https://chill-gamer-server-sepia.vercel.app/updateReview",
         reviewCredentials
       )
       .then(() => {
@@ -61,7 +61,7 @@ const UpdateReview = () => {
         toast.success("You have successfully Updated a Review!");
         const gameCredentials = { gameTitle };
         return axios.put(
-          "https://ph-tenth-assignment-server.vercel.app/addOrUpdateGame",
+          "https://chill-gamer-server-sepia.vercel.app/addOrUpdateGame",
           gameCredentials
         );
       })
