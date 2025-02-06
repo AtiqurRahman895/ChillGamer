@@ -2,6 +2,8 @@
 
 A dynamic gaming platform where users can explore, review, and add their favorite games. Enjoy a seamless gaming experience with a sleek UI and interactive features.
 
+![ChillGamer Screenshot](https://i.ibb.co.com/3mgxmjw4/project-Image2.jpg) 
+
 ## 🚀 Live Project  
 🔗 [ChillGamer Live](https://chillGamer.surge.sh/)  
 
